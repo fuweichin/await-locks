@@ -1,0 +1,46 @@
+{
+  "name": "await-locks",
+  "version": "0.1.0",
+  "description": "Some JavaScript concurrency-control / frequency-control utility classes to manage async tasks easily",
+  "keywords": [
+    "lock",
+    "semaphore",
+    "rate-limiter"
+  ],
+  "main": "lib/index.cjs",
+  "module": "src/index.js",
+  "browser": "dist/await-locks.umd.js",
+  "type": "module",
+  "exports": {
+    "import": "./src/index.js",
+    "require": "./lib/index.cjs"
+  },
+  "engines": {
+    "node": ">=16.9"
+  },
+  "types": "types/index.d.ts",
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "rollup -c rollup.config.js && tsc",
+    "test": "jasmine"
+  },
+  "author": "Fuwei Chin",
+  "license": "MIT",
+  "files": [
+    "src",
+    "lib",
+    "dist",
+    "types",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuweichin/await-locks.git"
+  },
+  "devDependencies": {
+    "express": "^4.18.1",
+    "http2-express-bridge": "^1.0.7",
+    "rollup-plugin-folder-input": "^1.0.1",
+    "serve-index": "^1.9.1"
+  }
+}

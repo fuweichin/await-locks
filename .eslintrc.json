@@ -1,0 +1,17 @@
+{
+  "env": {
+    "browser": true
+  },
+  "ignorePatterns": [
+    "dist/**/*.js",
+    "lib/**/*.cjs"
+  ],
+  "overrides": [
+    {
+      "files": ["spec/**/*.js"],
+      "env": {
+        "jasmine": true
+      }
+    }
+  ]
+}
