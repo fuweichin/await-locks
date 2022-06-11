@@ -24,7 +24,7 @@ let server = http2.createSecureServer({
   key: fs.readFileSync('./server/ssl/private/localhost.key'),
   cert: fs.readFileSync('./server/ssl/certs/localhost.crt'),
 }, app);
-server.listen(8443, '127.0.0.1', () => {
+server.listen(8443, () => {
   console.log('server started. https://127.0.0.1:8443');
 });
 server.on('error', (e) => {
