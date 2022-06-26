@@ -26,7 +26,7 @@ Web developers may have the following how-to questions
 + upload a bunch of files with specific num of parallel tasks
 + make actual handling of user actions/requests more even in time (distinguish from throttle/debounce which may drop requests)
 
-In Java language, there are concepts below to manage concurrency tasks
+In Java language, there are concepts below to manage concurrent tasks
 
 + Reentrant Lock
 + Semaphore
@@ -86,7 +86,11 @@ Promise.allSettled(promised).then((results) => {
 
 ### Usage in Node.js
 
+server.js
+
 ```js
+import http from 'http';
+import express from 'express';
 import {Semaphore} from 'await-locks';
 
 let semaphore = new Semaphore(4);
@@ -116,10 +120,7 @@ let handlers = {
   }
 }
 
-import http from 'http';
-import express from 'express';
-
-let app = http2Express(express);
+let app = express();
 app.get('/api/sleep', handlers.sleep);
 app.get('/api/sleep-semaphore', handlers.semaphoreServerExample);
 
